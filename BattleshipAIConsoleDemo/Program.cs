@@ -22,12 +22,22 @@ namespace BattleshipAIConsoleDemo
 			//SeekShip(2);
 			//DumpBoard();
 
-			TestMaximumShotsEvenOnly();
+			//TestHitShip();
+
+			//TestMaximumShotsEvenOnly();
+			TestMaximumShotsStepDown();
+		}
+
+		private static void TestHitShip()
+		{
+			InitializeBoard();
+			RandomShipPosition(3);
+
 		}
 
 		private static void TestMaximumShotsEvenOnly()
 		{
-			// 39
+			// 40
 			int maxShotsFired = 0;
 
 			for (int i = 0; i < 20000; i++)
@@ -62,7 +72,7 @@ namespace BattleshipAIConsoleDemo
 
 		private static void TestMaximumShotsStepDown()
 		{
-			// 51
+			// 59
 			int maxShotsFired = 0;
 
 			for (int i = 0; i < 20000; i++)
@@ -274,7 +284,7 @@ namespace BattleshipAIConsoleDemo
 
 				if (cellData > 1)
 				{
-					MarkShipAsHit(lengthOfShip);
+					MarkShipAsHit(cellData);
 					return totalShotsFired;
 				}
 				else
